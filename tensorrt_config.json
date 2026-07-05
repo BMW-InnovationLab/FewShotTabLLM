@@ -1,0 +1,73 @@
+{
+  "token_buffers": {
+    "input_buffer_multiplier": 1.5,
+    "input_buffer_additive": 512,
+    "output_buffer_multiplier": 1.8,
+    "output_buffer_additive": 256
+  },
+  "token_estimation": {
+    "output_sample_size": 50,
+    "fallback_tokens_per_row": 40
+  },
+  "token_length_thresholds": {
+    "input": [
+      {
+        "threshold": 2048,
+        "max_input_len": 4096
+      },
+      {
+        "threshold": 4096,
+        "max_input_len": 8192
+      },
+      {
+        "threshold": 8192,
+        "max_input_len": 16384
+      },
+      {
+        "threshold": 16384,
+        "max_input_len": 32768
+      },
+      {
+        "threshold": null,
+        "max_input_len": 65536
+      }
+    ]
+  },
+  "output_tokens": {
+    "multiplier": 2.5,
+    "min_value": 8192,
+    "max_value": 65536
+  },
+  "hardware_configs": {
+    "B200": {
+      "max_batch_size": 8192,
+      "concurrent_prompts_thresholds": [
+        {
+          "threshold": 4000,
+          "concurrent_prompts": 64,
+          "description": "Small prompts, many in parallel"
+        },
+        {
+          "threshold": 8000,
+          "concurrent_prompts": 32,
+          "description": "Medium prompts"
+        },
+        {
+          "threshold": 16000,
+          "concurrent_prompts": 64,
+          "description": "Large prompts (note: prints 24 but uses 64)"
+        },
+        {
+          "threshold": null,
+          "concurrent_prompts": 16,
+          "description": "Very large prompts, fewer in parallel"
+        }
+      ]
+    },
+    "default": {
+      "max_batch_size": 2048,
+      "concurrent_prompts": 8
+    }
+  }
+}
+

@@ -1,0 +1,46 @@
+# Install: pip install -r requirements_vllm.txt && pip install vllm
+
+# Core ML
+torch>=2.0.0
+transformers>=4.35.0
+peft>=0.7.0
+bitsandbytes>=0.41.0
+accelerate>=0.24.0
+datasets>=2.14.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+tqdm>=4.65.0
+hydra-core>=1.3.0
+omegaconf>=2.3.0
+setuptools<71
+dython>=0.7.0
+xgboost>=2.0.0
+click>=8.1.0
+fsspec>=2023.9.0
+s3fs>=2023.9.0
+pyarrow>=13.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+python-dateutil>=2.8.0
+
+# HTTP client for remote-vllm backend (no GPU required on client)
+httpx>=0.25.0
+
+# Observability (optional — install to enable Langfuse tracing)
+# Set LANGFUSE_SECRET_KEY + LANGFUSE_PUBLIC_KEY + LANGFUSE_BASE_URL to activate.
+# Commenting out this line will not break any functionality.
+langfuse>=4.0.0
+
+# Synthetic data evaluation
+sdmetrics>=0.14.0
+sdv>=1.0.0
+syntheval
+pomegranate==0.15.0
+pydantic>=2.0.0
+copulas>=0.9.0
+questionary>=2.0.0
+fastmcp>=0.1.0
+
